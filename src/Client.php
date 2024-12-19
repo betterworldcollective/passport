@@ -58,6 +58,16 @@ class Client extends Model
     public $plainSecret;
 
     /**
+     * @return string
+     */
+    public function getTable(): string
+    {
+        $prefix = config('passport.table_prefix');
+
+        return $prefix.$this->table;
+    }
+
+    /**
      * Bootstrap the model and its traits.
      *
      * @return void

@@ -21,6 +21,16 @@ class PersonalAccessClient extends Model
     protected $guarded = [];
 
     /**
+     * @return string
+     */
+    public function getTable(): string
+    {
+        $prefix = config('passport.table_prefix');
+
+        return $prefix.$this->table;
+    }
+
+    /**
      * Get all of the authentication codes for the client.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

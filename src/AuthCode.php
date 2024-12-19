@@ -52,6 +52,16 @@ class AuthCode extends Model
     protected $keyType = 'string';
 
     /**
+     * @return string
+     */
+    public function getTable(): string
+    {
+        $prefix = config('passport.table_prefix');
+
+        return $prefix.$this->table;
+    }
+
+    /**
      * Get the client that owns the authentication code.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

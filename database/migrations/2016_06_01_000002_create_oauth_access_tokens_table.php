@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('oauth_access_tokens', function (Blueprint $table) {
+        $prefix = config('passport.table_prefix');
+
+        Schema::create("{$prefix}oauth_access_tokens", function (Blueprint $table) {
             $table->string('id', 100)->primary();
             $table->unsignedBigInteger('user_id')->nullable()->index();
             $table->unsignedBigInteger('client_id');
@@ -28,6 +30,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('oauth_access_tokens');
+        $prefix = config('passport.table_prefix');
+
+        Schema::dropIfExists("{$prefix}oauth_access_tokens");
     }
 };

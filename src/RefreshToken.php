@@ -52,6 +52,16 @@ class RefreshToken extends Model
     public $timestamps = false;
 
     /**
+     * @return string
+     */
+    public function getTable(): string
+    {
+        $prefix = config('passport.table_prefix');
+
+        return $prefix.$this->table;
+    }
+
+    /**
      * Get the access token that the refresh token belongs to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

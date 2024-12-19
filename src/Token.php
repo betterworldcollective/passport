@@ -48,6 +48,16 @@ class Token extends Model
     ];
 
     /**
+     * @return string
+     */
+    public function getTable(): string
+    {
+        $prefix = config('passport.table_prefix');
+
+        return $prefix.$this->table;
+    }
+
+    /**
      * Get the client that the token belongs to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

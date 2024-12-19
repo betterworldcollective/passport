@@ -72,4 +72,17 @@ return [
         'secret' => env('PASSPORT_PERSONAL_ACCESS_CLIENT_SECRET'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Table Prefix
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify a table prefix, which will be used to prefix
+    | all the tables created by Passport. You need to set this prior
+    | to running the migrations and should not be changed after.
+    |
+    */
+
+    'table_prefix' => ''
+
 ];
